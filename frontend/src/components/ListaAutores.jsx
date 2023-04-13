@@ -6,16 +6,11 @@ function ListaAutores(  ) {
     const [ autores, setAutores] = useState([])
 
     function manexadorActualizar() {
-        recuperarAutor(manexadorResposta)
+        recuperarAutor(manexadorDatos)
     }
 
-    async function manexadorResposta(resposta) {
-        if (resposta.ok) {
-            const datos = await resposta.json()
-            setAutores(datos)
-        } else {
-            alert("Uuups! Non poidemos recuperar a lista de autores. Intentao de novo.")
-        }
+    function manexadorDatos(datos) {
+        setAutores(datos)
     }
 
     return (

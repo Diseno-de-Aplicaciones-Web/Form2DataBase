@@ -1,5 +1,5 @@
-import CrearAutor from "./components/CrearAutor.mjs"
-import ListaAutores from "./components/ListaAutores.mjs"
+import CrearAutor from "./components/CrearAutor.jsx"
+import ListaAutores from "./components/ListaAutores.jsx"
 
 function App() {
   return (

@@ -22,10 +22,15 @@ async function enviarNovoAutor(autor, manexadorResposta=()=>{}) {
     }
 }
 
-async function recuperarAutor(manexadorResposta=()=>{}) {
+async function recuperarAutor(manexadorDatos=()=>{}) {
     try {
         const resposta = await fetch(baseUrl+rutaAPIAutores)
-        manexadorResposta(resposta)
+        if (resposta.ok) {
+            const datos = await resposta.json()
+            manexadorDatos(datos)
+        } else {
+            alert("Uuups! Non poidemos recuperar a lista de autores. Intentao de novo.")
+        }
     } catch (excepcion) {
         manexadorExcepcions(excepcion)
     }
